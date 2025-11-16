@@ -1,103 +1,103 @@
 // import { Card, CardContent } from '@/components/ui/card';
-import { Mail, GraduationCap, Award, Users } from 'lucide-react';
+import { Mail, Phone, GraduationCap, Award, Users, BookOpen } from 'lucide-react';
 
 export default function TeachersPage() {
   const teachers = [
     {
       name: 'Mrs. Sunita Sharma',
       designation: 'English Teacher',
-      description: 'Leading with vision and excellence, specializing in English literature and educational leadership.',
       email: 'sunita.sharma@yogaconvent.edu.in',
+      phone: '+91 98765 43210',
       subject: 'English & Administration',
-      hue: 0
+      experience: '15 Years'
     },
     {
       name: 'Mr. Rajesh Kumar',
       designation: 'Mathematics Teacher',
-      description: 'Making complex mathematical concepts simple and engaging for students of all levels.',
       email: 'rajesh.kumar@yogaconvent.edu.in',
+      phone: '+91 98765 43211',
       subject: 'Mathematics',
-      hue: 0
+      experience: '12 Years'
     },
     {
       name: 'Mrs. Priya Verma',
       designation: 'Science Teacher',
-      description: 'Inspiring scientific curiosity through hands-on experiments and practical learning.',
       email: 'priya.verma@yogaconvent.edu.in',
+      phone: '+91 98765 43212',
       subject: 'Science',
-      hue: 0
+      experience: '10 Years'
     },
     {
       name: 'Ms. Anjali Singh',
       designation: 'Hindi Teacher',
-      description: 'Fostering love for Hindi language and literature through creative teaching methods.',
       email: 'anjali.singh@yogaconvent.edu.in',
+      phone: '+91 98765 43213',
       subject: 'Hindi',
-      hue: 0
+      experience: '8 Years'
     },
     {
       name: 'Mr. Amit Patel',
       designation: 'Social Science Teacher',
-      description: 'Bringing history and civics to life with engaging storytelling and real-world connections.',
       email: 'amit.patel@yogaconvent.edu.in',
+      phone: '+91 98765 43214',
       subject: 'Social Science',
-      hue: 0
+      experience: '11 Years'
     },
     {
       name: 'Mrs. Kavita Gupta',
       designation: 'English Teacher',
-      description: 'Building strong communication skills and confidence through interactive English lessons.',
       email: 'kavita.gupta@yogaconvent.edu.in',
+      phone: '+91 98765 43215',
       subject: 'English',
-      hue: 0
+      experience: '9 Years'
     },
     {
       name: 'Mr. Vikram Mehta',
       designation: 'Computer Science Teacher',
-      description: 'Preparing students for the digital future with cutting-edge technology education.',
       email: 'vikram.mehta@yogaconvent.edu.in',
+      phone: '+91 98765 43216',
       subject: 'Computer Science',
-      hue: 0
+      experience: '7 Years'
     },
     {
       name: 'Mrs. Neha Reddy',
       designation: 'Mathematics Teacher',
-      description: 'Developing problem-solving skills and logical thinking through personalized attention.',
       email: 'neha.reddy@yogaconvent.edu.in',
+      phone: '+91 98765 43217',
       subject: 'Mathematics',
-      hue: 0
+      experience: '10 Years'
     },
     {
       name: 'Ms. Pooja Joshi',
       designation: 'EVS Teacher',
-      description: 'Creating environmental awareness and connecting students with nature through exploration.',
       email: 'pooja.joshi@yogaconvent.edu.in',
+      phone: '+91 98765 43218',
       subject: 'Environmental Studies',
-      hue: 0
+      experience: '6 Years'
     },
     {
       name: 'Mr. Sanjay Nair',
       designation: 'Physical Education Teacher',
-      description: 'Promoting fitness, sportsmanship, and healthy lifestyle habits among students.',
       email: 'sanjay.nair@yogaconvent.edu.in',
+      phone: '+91 98765 43219',
       subject: 'Physical Education',
-      hue: 0
+      experience: '13 Years'
     },
     {
       name: 'Mrs. Rekha Desai',
       designation: 'Art & Craft Teacher',
-      description: 'Nurturing creativity and artistic expression through diverse art forms and techniques.',
       email: 'rekha.desai@yogaconvent.edu.in',
+      phone: '+91 98765 43220',
       subject: 'Art & Craft',
-      hue: 0
+      experience: '8 Years'
     },
     {
       name: 'Ms. Divya Sharma',
       designation: 'Music Teacher',
-      description: 'Cultivating musical talent and appreciation through vocal and instrumental training.',
       email: 'divya.sharma@yogaconvent.edu.in',
+      phone: '+91 98765 43221',
       subject: 'Music',
-      hue: 0
+      experience: '5 Years'
     },
   ];
 
@@ -105,7 +105,6 @@ export default function TeachersPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white py-20 md:py-28 overflow-hidden">
-        {/* Logo Watermark */}
         <div className="absolute inset-0 opacity-5 flex items-center justify-center">
           <img 
             src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png" 
@@ -148,9 +147,8 @@ export default function TeachersPage() {
         </div>
       </section>
 
-      {/* Teachers Cards */}
+      {/* Teachers Visiting Cards */}
       <section className="py-16 md:py-24 relative bg-white">
-        {/* Background Logo Watermark */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
             <img 
@@ -174,49 +172,62 @@ export default function TeachersPage() {
             <p className="text-gray-600 text-lg">Dedicated professionals shaping tomorrow's leaders</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {teachers.map((teacher, index) => (
-              <div
-                key={index}
-                className="teacher-card group"
-                style={{
-                    ["--hue" as any]: teacher.hue,
-                    ["--saturation" as any]: "100%",
-                    ["--lightness" as any]: "45%"
-                }}
-              >
-                <div className="card-content">
-                  {/* Teacher Name */}
-                  <h3 className="text-xl font-semibold mb-2">
-                    {teacher.name}
-                  </h3>
-
-                  {/* Designation */}
-                  <p className="text-sm font-semibold uppercase tracking-wide opacity-80 mb-3">
-                    {teacher.designation}
-                  </p>
-
-                  {/* Subject Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium mb-3 bg-red-50 border border-red-200 text-red-700">
-                    <div className="h-1.5 w-1.5 rounded-full bg-red-600"></div>
-                    {teacher.subject}
+              <div key={index} className="visiting-card-wrapper">
+                <div className="visiting-card">
+                  {/* Top Red Bar with Logo */}
+                  <div className="card-top-bar">
+                    <img 
+                      src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png" 
+                      alt="Logo"
+                      className="card-logo"
+                    />
+                    <div className="school-title">
+                      <h4>Yoga Convent School</h4>
+                    </div>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-sm leading-relaxed mb-4 opacity-80">
-                    {teacher.description}
-                  </p>
+                  {/* Card Body */}
+                  <div className="card-body-section">
+                    {/* Teacher Name */}
+                    <h3 className="teacher-name">{teacher.name}</h3>
+                    
+                    {/* Designation */}
+                    <p className="teacher-role">{teacher.designation}</p>
+                    
+                    {/* Subject Badge */}
+                    <div className="subject-tag">
+                      <BookOpen className="subject-icon" />
+                      <span>{teacher.subject}</span>
+                    </div>
 
-                  {/* Email */}
-                  <div className="flex items-center gap-2 text-sm opacity-70 mb-4">
-                    <Mail className="h-4 w-4 flex-shrink-0" />
-                    <span className="break-all text-xs">{teacher.email}</span>
+                    {/* Divider */}
+                    <div className="card-divider"></div>
+
+                    {/* Contact Info */}
+                    <div className="contact-section">
+                      <div className="contact-row">
+                        <Mail className="contact-icon" />
+                        <span className="contact-value">{teacher.email}</span>
+                      </div>
+                      <div className="contact-row">
+                        <Phone className="contact-icon" />
+                        <span className="contact-value">{teacher.phone}</span>
+                      </div>
+                    </div>
+
+                    {/* Experience Badge */}
+                    <div className="experience-badge">
+                      <Award className="exp-icon" />
+                      <span>{teacher.experience} Experience</span>
+                    </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <a href={`mailto:${teacher.email}`} className="cta-button">
-                    Contact Teacher
-                  </a>
+                  {/* Bottom Red Strip */}
+                  <div className="card-bottom-bar">
+                    <span>Excellence in Education</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -254,62 +265,175 @@ export default function TeachersPage() {
       </section>
 
       <style>{`
-        .teacher-card {
-          padding: 1.5em;
+        /* Visiting Card Container */
+        .visiting-card-wrapper {
           display: flex;
-          flex-direction: column;
-          color: #1f2937;
-          background-color: #ffffff;
-          border: 1px solid rgba(239, 68, 68, 0.2);
-          border-radius: 15px;
-          transition: all ease-in-out 0.3s;
-          min-height: 400px;
-          box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);
+          justify-content: center;
+          perspective: 1000px;
         }
 
-        .card-content {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-        }
-
-        .teacher-card .cta-button {
-          display: block;
-          margin-top: auto;
-          text-align: center;
-          text-decoration: none;
-          color: #dc2626;
-          background-color: transparent;
-          outline: 2px solid #dc2626;
-          padding: 0.7em;
-          border-radius: 10px;
-          font-size: 0.95rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-
-        .teacher-card:hover {
-          background: rgba(254, 242, 242, 0.8);
-          color: #1f2937;
-          outline: 2px solid #dc2626;
-          transform: translateY(-4px);
+        /* Main Card - Standard Visiting Card Dimensions (89mm x 51mm ratio) */
+        .visiting-card {
+          width: 320px;
+          background: white;
+          border-radius: 8px;
+          overflow: hidden;
           box-shadow: 
-            inset 0 0 60px rgba(254, 226, 226, 0.8),
-            inset 15px 0 60px rgba(220, 38, 38, 0.3),
-            inset -15px 0 60px rgba(220, 38, 38, 0.3),
-            inset 15px 0 200px rgba(220, 38, 38, 0.2),
-            inset -15px 0 200px rgba(220, 38, 38, 0.2),
-            0 0 40px rgba(220, 38, 38, 0.2),
-            -8px 0 50px rgba(220, 38, 38, 0.3),
-            8px 0 50px rgba(220, 38, 38, 0.3);
+            0 2px 4px rgba(0, 0, 0, 0.1),
+            0 4px 12px rgba(0, 0, 0, 0.08);
+          transition: all 0.3s ease;
+          border: 1px solid rgba(220, 38, 38, 0.15);
         }
 
-        .teacher-card:hover .cta-button {
-          outline: none;
-          background-color: #dc2626;
-          color: #fff;
+        .visiting-card:hover {
+          transform: translateY(-5px) scale(1.02);
+          box-shadow: 
+            0 8px 16px rgba(220, 38, 38, 0.2),
+            0 12px 32px rgba(220, 38, 38, 0.15);
         }
 
+        /* Top Red Bar */
+        .card-top-bar {
+          background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+          padding: 0.7rem 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.7rem;
+        }
+
+        .card-logo {
+          width: 35px;
+          height: 35px;
+          background: white;
+          border-radius: 6px;
+          padding: 3px;
+          object-fit: contain;
+        }
+
+        .school-title h4 {
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: white;
+          margin: 0;
+          line-height: 1.2;
+        }
+
+        /* Card Body */
+        .card-body-section {
+          padding: 1rem;
+          background: white;
+        }
+
+        .teacher-name {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: #1f2937;
+          margin: 0 0 0.3rem 0;
+          line-height: 1.3;
+        }
+
+        .teacher-role {
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: #dc2626;
+          text-transform: uppercase;
+          letter-spacing: 0.3px;
+          margin: 0 0 0.7rem 0;
+        }
+
+        .subject-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.3rem;
+          background: #fef2f2;
+          border: 1px solid #fca5a5;
+          color: #991b1b;
+          padding: 0.3rem 0.6rem;
+          border-radius: 12px;
+          font-size: 0.7rem;
+          font-weight: 600;
+          margin-bottom: 0.8rem;
+        }
+
+        .subject-icon {
+          width: 12px;
+          height: 12px;
+        }
+
+        .card-divider {
+          height: 1.5px;
+          background: linear-gradient(to right, #dc2626, #ef4444, #dc2626);
+          margin: 0.8rem 0;
+          border-radius: 2px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .contact-row {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+
+        .contact-icon {
+          width: 14px;
+          height: 14px;
+          color: #dc2626;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        .contact-value {
+          font-size: 0.7rem;
+          color: #4b5563;
+          font-weight: 500;
+          word-break: break-all;
+          line-height: 1.4;
+        }
+
+        /* Experience Badge */
+        .experience-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          background: #f9fafb;
+          border: 1px solid #e5e7eb;
+          padding: 0.35rem 0.6rem;
+          border-radius: 6px;
+          font-size: 0.7rem;
+          color: #374151;
+          font-weight: 600;
+          margin-top: 0.5rem;
+        }
+
+        .exp-icon {
+          width: 12px;
+          height: 12px;
+          color: #dc2626;
+        }
+
+        /* Bottom Red Strip */
+        .card-bottom-bar {
+          background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+          padding: 0.5rem;
+          text-align: center;
+        }
+
+        .card-bottom-bar span {
+          font-size: 0.7rem;
+          color: white;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        }
+
+        /* Quality Cards */
         .quality-card {
           padding: 2em;
           color: #1f2937;
@@ -346,6 +470,27 @@ export default function TeachersPage() {
             0 0 30px rgba(220, 38, 38, 0.15),
             -6px 0 40px rgba(220, 38, 38, 0.25),
             6px 0 40px rgba(220, 38, 38, 0.25);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+          .visiting-card {
+            width: 300px;
+          }
+
+          .teacher-name {
+            font-size: 1rem;
+          }
+
+          .card-body-section {
+            padding: 0.9rem;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .visiting-card {
+            width: 310px;
+          }
         }
       `}</style>
     </div>

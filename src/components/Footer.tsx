@@ -11,7 +11,7 @@ export default function Footer() {
               <img 
                 src="https://images.fillout.com/orgid-503168/flowpublicid-5bcjrn1sry/widgetid-default/n95MqABNwZiQVHJwbmNdn5/pasted-image-1763202720427.png" 
                 alt="Yoga Convent School Logo" 
-                className="h-12 w-12"
+                className="h-16 w-16"
               />
               <h3 className="text-xl font-bold">Yoga Convent School</h3>
             </div>

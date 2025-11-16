@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate } from "react-router-dom";
 
-import { BookOpen, Users, Award, Heart, ArrowRight, Star, Trophy, Lightbulb, Target, Sparkles, CheckCircle, GraduationCap, FlaskConical, Brain, Palette, Globe, Music, Drama, Dumbbell, Shield, TrendingUp, Video, Library, Microscope } from 'lucide-react';
+import { BookOpen, Users, Award, Heart, ArrowRight, Star, Trophy, Lightbulb, Target, Sparkles, CheckCircle, GraduationCap, FlaskConical, Brain, Palette, Globe, Music, Drama, Dumbbell, Shield, TrendingUp, Video, Library, Microscope, Quote, Mail, Phone } from 'lucide-react';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -226,12 +226,8 @@ export default function HomePage() {
                   <span className="block text-secondary mt-2">Bright Future</span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl opacity-95 leading-relaxed">
-                  Where Excellence Meets Compassion in Education
-                </p>
-                
                 <p className="text-lg opacity-90 leading-relaxed">
-                  Join Yoga Convent School - A premier institution offering quality education from Class 1 to 8 with CBSE curriculum, experienced teachers, and a nurturing environment that brings out the best in every child.
+                  Join Yoga Convent School — A trusted institution with 30+ years of excellence, offering quality education from Class 1 to 8. With a CBSE-based curriculum, experienced teachers, and a safe, nurturing environment, we help every child grow, learn, and achieve their best.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 pt-4">
@@ -257,7 +253,7 @@ export default function HomePage() {
                 {/* Quick Stats */}
                 <div className="flex flex-wrap gap-8 pt-6">
                   <div>
-                    <div className="text-4xl font-bold text-secondary">15+</div>
+                    <div className="text-4xl font-bold text-secondary">30+</div>
                     <div className="text-sm opacity-90">Years Experience</div>
                   </div>
                   <div>
@@ -265,7 +261,7 @@ export default function HomePage() {
                     <div className="text-sm opacity-90">Happy Students</div>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-secondary">20+</div>
+                    <div className="text-4xl font-bold text-secondary">30+</div>
                     <div className="text-sm opacity-90">Expert Teachers</div>
                   </div>
                 </div>
@@ -315,22 +311,161 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-background via-muted/20 to-background">
+            {/* Leadership Section - Director & Principal - OPTIMIZED FOR DESKTOP */}
+      <section className="py-8 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Why Choose Us
+          {/* Section Header */}
+          <div className="text-center mb-10">
+            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-3">
+              Our Leadership
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Makes Us Special</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We provide comprehensive education that goes beyond textbooks, nurturing well-rounded individuals ready for tomorrow's challenges.
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Visionary Leaders Guiding Excellence</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+              Dedicated to shaping young minds with compassion and innovation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {/* Director Section - Text Left, Image Right */}
+          <div className="max-w-6xl mx-auto mb-8">
+            <Card className="border-2 hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2 gap-0 items-center">
+                  {/* Text Content - Left */}
+                  <div className="p-6 md:p-8">
+                    <div className="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                      DIRECTOR
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Mrs. Pramila Pandey</h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Visionary Administrator & Educational Leader
+                    </p>
+                    
+                    {/* Quote */}
+                    <div className="relative bg-gradient-to-br from-accent/5 to-accent/10 rounded-lg p-4 mb-4 border-l-4 border-accent">
+                      <Quote className="h-6 w-6 text-accent/30 absolute top-3 right-3" />
+                      <p className="text-muted-foreground italic text-sm leading-relaxed relative z-10">
+                        "Every child is unique and gifted. Our mission is to provide a nurturing environment where each student can discover their potential."
+                      </p>
+                    </div>
+
+                    {/* Key Highlights - Compact */}
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="bg-accent/10 p-1.5 rounded-lg">
+                          <Heart className="h-4 w-4 text-accent" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm">Holistic Education Pioneer</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="bg-accent/10 p-1.5 rounded-lg">
+                          <Trophy className="h-4 w-4 text-accent" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm">Excellence in Administration</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Image - Right - OPTIMIZED */}
+                  <div className="relative h-[280px] md:h-[340px] bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800" 
+                      alt="Mrs. Pramila Pandey - Director" 
+                      className="w-full h-full object-cover object-center"
+                      style={{
+                        objectPosition: 'center 30%'
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Principal Section - Image Left, Text Right */}
+          <div className="max-w-6xl mx-auto">
+            <Card className="border-2 hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2 gap-0 items-center">
+                  {/* Image - Left - OPTIMIZED */}
+                  <div className="relative h-[280px] md:h-[340px] bg-gradient-to-br from-primary/20 to-primary/5 order-2 md:order-1 overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800" 
+                      alt="Dr. Dilip Kumar Pandey - Principal" 
+                      className="w-full h-full object-cover object-center"
+                      style={{
+                        objectPosition: 'center 30%'
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                  </div>
+
+                  {/* Text Content - Right */}
+                  <div className="p-6 md:p-8 order-1 md:order-2">
+                    <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                      PRINCIPAL
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Dr. Dilip Kumar Pandey</h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Principal & Chief Academic Officer
+                    </p>
+                    
+                    {/* Quote */}
+                    <div className="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg p-4 mb-4 border-l-4 border-primary">
+                      <Quote className="h-6 w-6 text-primary/30 absolute top-3 right-3" />
+                      <p className="text-muted-foreground italic text-sm leading-relaxed relative z-10">
+                        "Education is about nurturing compassionate, creative, and confident individuals who can make a positive difference in the world."
+                      </p>
+                    </div>
+
+                    {/* Key Highlights - Compact */}
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="bg-primary/10 p-1.5 rounded-lg">
+                          <Award className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm">25+ Years in Education</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="bg-primary/10 p-1.5 rounded-lg">
+                          <GraduationCap className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm">PhD in Educational Management</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Features Section */}
+      <section className="py-4 bg-gradient-to-b from-muted/30 to-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              Why Choose Us
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">What Makes Us Special</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive education nurturing well-rounded individuals ready for tomorrow's challenges
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {features.map((feature, index) => (
-              <Card key={index} className="group border-2 hover:border-primary hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-background to-muted/20">
+              <Card key={index} className="group border-2 hover:border-primary hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-background to-muted/20">
                 <CardContent className="p-8">
                   <div className="bg-gradient-to-br from-primary to-accent w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                     <feature.icon className="h-8 w-8 text-white" />
@@ -345,13 +480,13 @@ export default function HomePage() {
       </section>
 
       {/* Subjects Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5">
+      <section className="py-8 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
               Academic Excellence
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Comprehensive Curriculum</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Comprehensive Curriculum</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               CBSE-aligned curriculum with focus on practical application and conceptual understanding
             </p>
@@ -359,7 +494,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {subjects.map((subject, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary overflow-hidden">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary overflow-hidden">
                 <CardContent className="p-6">
                   <div className={`bg-gradient-to-br ${subject.color} w-20 h-20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-xl`}>
                     <subject.icon className="h-10 w-10 text-white" />
@@ -374,13 +509,13 @@ export default function HomePage() {
       </section>
 
       {/* Co-curricular Activities */}
-      <section className="py-20 md:py-32">
+      <section className="py-10">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               Beyond Academics
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Co-Curricular Activities</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Co-Curricular Activities</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Developing talents, building confidence, and nurturing creativity through diverse activities
             </p>
@@ -403,15 +538,15 @@ export default function HomePage() {
       </section>
 
       {/* Achievements */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-primary/95 to-accent text-white relative overflow-hidden">
+      <section className="py-10 bg-gradient-to-br from-primary via-primary/95 to-accent text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Achievements</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Achievements</h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
               Recognition of excellence across academics, sports, and cultural activities
             </p>
@@ -435,7 +570,7 @@ export default function HomePage() {
       </section>
 
       {/* Facilities */}
-      <section className="py-20 md:py-32">
+      <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -498,10 +633,10 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Extended */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-muted/30 to-background">
+      <section className="py-8 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">The Yoga Convent Advantage</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">The Yoga Convent Advantage</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Proven methodologies and dedicated support systems for holistic student development
             </p>
@@ -521,7 +656,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <Card className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-2">
+          <Card className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-2 max-w-6xl mx-auto">
             <CardContent className="p-12">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -571,13 +706,13 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-32 bg-muted/30">
+      <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               Parent Testimonials
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Parents Say About Us</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">What Parents Say About Us</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Real experiences from our satisfied parent community
             </p>
@@ -605,7 +740,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-primary/95 to-accent text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary via-primary/95 to-accent text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
