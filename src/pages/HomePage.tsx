@@ -601,7 +601,7 @@ export default function HomePage() {
                 <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white hover:shadow-2xl transition-all hover:scale-105">
                   <CardContent className="p-8 text-center">
                     <Library className="h-12 w-12 mx-auto mb-4" />
-                    <div className="text-4xl font-bold mb-2">5000+</div>
+                    <div className="text-4xl font-bold mb-2">5000</div>
                     <div className="text-sm opacity-90">Books in Library</div>
                   </CardContent>
                 </Card>

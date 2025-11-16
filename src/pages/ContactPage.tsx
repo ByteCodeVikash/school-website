@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -38,25 +39,29 @@ export default function ContactPage() {
       icon: Phone,
       title: 'Phone',
       details: ['+91-9415981641'],
-      color: 'bg-blue-500',
+      color: 'bg-[#d50004]',
+      link: 'tel:+919415981641',
     },
     {
       icon: Mail,
       title: 'Email',
       details: ['info@yogaconvent.edu.in', 'admissions@yogaconvent.edu.in'],
-      color: 'bg-green-500',
+      color: 'bg-[#00aade]',
+      link: 'mailto:info@yogaconvent.edu.in',
     },
     {
       icon: MapPin,
       title: 'Address',
-      details: ['Bhirbhanpur, Varanasi Uttar Pradesh Near Bheronath Mandir Varanasi Uttar Pradesh India - 221311 .'],
-      color: 'bg-purple-500',
+      details: ['Bhirbhanpur, Varanasi, Near Bheronath Mandir, Uttar Pradesh - 221311'],
+      color: 'bg-[#d50004]',
+      link: null,
     },
     {
       icon: Clock,
       title: 'Office Hours',
       details: ['Monday - Friday: 8:00 AM - 4:00 PM', 'Saturday: 8:00 AM - 1:00 PM'],
-      color: 'bg-orange-500',
+      color: 'bg-[#00aade]',
+      link: null,
     },
   ];
 
@@ -85,33 +90,46 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-white py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl opacity-95">
+      {/* Hero Section - Logo Color Theme */}
+      <section className="bg-gradient-to-br from-[#d50004] via-[#b80003] to-[#00aade] text-white py-16 md:py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight">Contact Us</h1>
+            <p className="text-xl md:text-2xl font-light opacity-95 max-w-2xl mx-auto">
               Get in Touch for Admissions, Enquiries, or Any Questions
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {/* Contact Information Cards */}
+      <section className="py-10 md:py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Get In Touch</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className={`${info.color} text-white w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-4`}>
-                    <info.icon className="h-7 w-7" />
+              <Card 
+                key={index} 
+                className="text-center border-2 hover:shadow-xl hover:border-[#00aade]/30 transition-all duration-300 hover:-translate-y-1"
+              >
+                <CardContent className="pt-10 pb-8 px-6">
+                  <div className={`${info.color} text-white w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
+                    <info.icon className="h-10 w-10" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-3">{info.title}</h3>
+                  <h3 className="font-bold text-xl mb-4 text-gray-900">{info.title}</h3>
                   {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-sm text-muted-foreground">
-                      {detail}
+                    <p key={idx} className="text-base text-muted-foreground mb-2 leading-relaxed">
+                      {info.link && idx === 0 ? (
+                        <a href={info.link} className="hover:text-[#00aade] transition-colors">
+                          {detail}
+                        </a>
+                      ) : (
+                        detail
+                      )}
                     </p>
                   ))}
                 </CardContent>
@@ -120,26 +138,29 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form and Map */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
+            {/* Contact Form */}
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-6 bg-gradient-to-br from-[#d50004]/5 to-[#00aade]/5">
+                <CardTitle className="text-3xl font-bold text-gray-900">Send Us a Message</CardTitle>
+                <p className="text-muted-foreground mt-2">We'll respond within 24 hours</p>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
+              <CardContent className="pt-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name" className="text-base font-semibold">Full Name *</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your full name"
+                      className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email" className="text-base font-semibold">Email Address *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -147,11 +168,12 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your email"
+                      className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone" className="text-base font-semibold">Phone Number *</Label>
                     <Input
                       id="phone"
                       name="phone"
@@ -159,38 +181,45 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Enter your phone number"
+                      className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="subject">Subject *</Label>
+                    <Label htmlFor="subject" className="text-base font-semibold">Subject *</Label>
                     <Input
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="What is this regarding?"
+                      className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message" className="text-base font-semibold">Message *</Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Write your message here..."
-                      rows={5}
+                      rows={6}
+                      className="mt-2 resize-none"
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Button 
+                    type="submit" 
+                    className="w-full h-12 text-base bg-gradient-to-r from-[#d50004] to-[#00aade] hover:opacity-90" 
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       'Sending...'
                     ) : (
                       <>
-                        <Send className="mr-2 h-4 w-4" />
+                        <Send className="mr-2 h-5 w-5" />
                         Send Message
                       </>
                     )}
@@ -199,33 +228,54 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Visit Our School</CardTitle>
+            {/* Map and Location */}
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-6 bg-gradient-to-br from-[#00aade]/5 to-[#d50004]/5">
+                <CardTitle className="text-3xl font-bold text-gray-900">Visit Our School</CardTitle>
+                <p className="text-muted-foreground mt-2">Find us on the map</p>
               </CardHeader>
-              <CardContent>
-                <div className="bg-muted rounded-lg aspect-square flex items-center justify-center mb-6">
-                  <MapPin className="h-24 w-24 text-muted-foreground" />
+              <CardContent className="pt-6">
+                {/* Google Maps Embed - Responsive */}
+                <div className="relative w-full pb-[75%] mb-8 rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.3988796947795!2d82.95!3d25.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db92bcaaaab%3A0x1e7c23bdb4381d64!2sBhirbhanpur%2C%20Varanasi%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    className="absolute top-0 left-0 w-full h-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold mb-2">School Address</h4>
-                    <p className="text-muted-foreground">
+
+                <div className="space-y-6">
+                  <div className="p-6 bg-gradient-to-br from-[#efd598]/20 to-transparent rounded-lg border-2 border-[#efd598]/30">
+                    <h4 className="font-bold mb-3 text-lg text-gray-900 flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-[#d50004]" />
+                      School Address
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
                       Yoga Convent School<br />
-                      Bhirbhanpur,<br />
-                      Varanasi Uttar Pradesh,<br />
-                      Near Bheronath Mandir,<br />
-                      Varanasi Uttar Pradesh India - 221311 .
+                      Bhirbhanpur, Varanasi<br />
+                      Near Bheronath Mandir<br />
+                      Uttar Pradesh, India - 221311
                     </p>
                   </div>
+
                   <div>
-                    <h4 className="font-semibold mb-2">How to Reach</h4>
-                    <p className="text-muted-foreground text-sm">
-                      Our school is easily accessible by public transport and has ample parking space for visitors. The nearest metro station is just 2 km away.
+                    <h4 className="font-bold mb-3 text-lg text-gray-900">How to Reach</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Our school is easily accessible by public transport and has ample parking space for visitors. Located near the famous Bheronath Mandir.
                     </p>
                   </div>
-                  <Button variant="outline" className="w-full">
-                    Get Directions
+
+                  <Button 
+                    variant="outline" 
+                    className="w-full h-12 border-2 border-[#00aade] text-[#00aade] hover:bg-[#00aade] hover:text-white transition-all"
+                    asChild
+                  >
+                    <a href="https://maps.google.com/?q=Bhirbhanpur,+Varanasi" target="_blank" rel="noopener noreferrer">
+                      <MapPin className="mr-2 h-5 w-5" />
+                      Get Directions
+                    </a>
                   </Button>
                 </div>
               </CardContent>
@@ -235,21 +285,31 @@ export default function ContactPage() {
       </section>
 
       {/* Admission Process */}
-      <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Admission Process</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="py-10 md:py-20 bg-gradient-to-b from-[#efd598]/10 to-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Admission Process</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full mb-6"></div>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Simple and transparent admission process in 4 easy steps
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {admissionSteps.map((step, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary text-primary-foreground w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                <Card 
+                  key={index} 
+                  className="border-2 hover:shadow-xl hover:border-[#00aade]/30 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <CardContent className="pt-8 pb-8">
+                    <div className="flex items-start gap-6">
+                      <div className="bg-gradient-to-br from-[#d50004] to-[#00aade] text-white w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 text-2xl font-bold shadow-lg">
                         {step.step}
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                        <p className="text-muted-foreground">{step.description}</p>
+                        <h3 className="text-2xl font-bold mb-3 text-gray-900">{step.title}</h3>
+                        <p className="text-base text-muted-foreground leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -261,53 +321,37 @@ export default function ContactPage() {
       </section>
 
       {/* Documents Required */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Documents Required for Admission</h2>
-            <Card>
-              <CardContent className="pt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3">
-                    <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 text-sm font-bold">
-                      ✓
+      <section className="py-10 md:py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Documents Required for Admission</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
+            </div>
+
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardContent className="pt-10 pb-10 px-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    'Birth Certificate (Original & Photocopy)',
+                    'Transfer Certificate (if applicable)',
+                    'Previous Year Report Card',
+                    'Aadhaar Card (Student & Parents)',
+                    'Passport Size Photographs (4 copies)',
+                    'Address Proof (Electricity Bill/Rent Agreement)',
+                  ].map((doc, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="bg-gradient-to-br from-[#00aade] to-[#0099cc] text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold shadow">
+                        ✓
+                      </div>
+                      <span className="text-base text-gray-700 pt-2 leading-relaxed">{doc}</span>
                     </div>
-                    <span>Birth Certificate (Original & Photocopy)</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 text-sm font-bold">
-                      ✓
-                    </div>
-                    <span>Transfer Certificate (if applicable)</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 text-sm font-bold">
-                      ✓
-                    </div>
-                    <span>Previous Year Report Card</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 text-sm font-bold">
-                      ✓
-                    </div>
-                    <span>Aadhaar Card (Student & Parents)</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 text-sm font-bold">
-                      ✓
-                    </div>
-                    <span>Passport Size Photographs (4 copies)</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="bg-accent text-accent-foreground rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1 text-sm font-bold">
-                      ✓
-                    </div>
-                    <span>Address Proof (Electricity Bill/Rent Agreement)</span>
-                  </div>
+                  ))}
                 </div>
-                <div className="mt-6 p-4 bg-primary/10 rounded-lg">
-                  <p className="text-sm">
-                    <strong>Note:</strong> All documents should be self-attested. Original documents will be verified and returned at the time of admission.
+
+                <div className="mt-10 p-6 bg-gradient-to-br from-[#efd598]/20 to-transparent rounded-lg border-2 border-[#efd598]/30">
+                  <p className="text-base leading-relaxed text-gray-700">
+                    <strong className="text-[#d50004]">Note:</strong> All documents should be self-attested. Original documents will be verified and returned at the time of admission.
                   </p>
                 </div>
               </CardContent>
@@ -317,71 +361,76 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">What classes does Yoga Convent School offer?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    We offer classes from Class 1 to Class 8, providing quality education with a focus on overall personality development.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">What is the student-teacher ratio?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    We maintain an optimal student-teacher ratio to ensure personalized attention for each child. Our class sizes are kept small for better learning outcomes.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Do you provide transport facilities?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Yes, we provide safe and secure school transport facilities covering various routes across the city.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">When does the admission process start?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Admissions typically open in January-February for the new academic session starting in April. However, you can contact us anytime for enquiries.
-                  </p>
-                </CardContent>
-              </Card>
+      <section className="py-8 md:py-16 bg-gradient-to-b from-[#efd598]/10 to-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  question: 'What classes does Yoga Convent School offer?',
+                  answer: 'We offer classes from Class 1 to Class 8, providing quality education with a focus on overall personality development.',
+                },
+                {
+                  question: 'What is the student-teacher ratio?',
+                  answer: 'We maintain an optimal student-teacher ratio to ensure personalized attention for each child. Our class sizes are kept small for better learning outcomes.',
+                },
+                {
+                  question: 'Do you provide transport facilities?',
+                  answer: 'Yes, we provide safe and secure school transport facilities covering various routes across the city.',
+                },
+                {
+                  question: 'When does the admission process start?',
+                  answer: 'Admissions typically open in January-February for the new academic session starting in April. However, you can contact us anytime for enquiries.',
+                },
+              ].map((faq, index) => (
+                <Card key={index} className="border-2 hover:shadow-lg hover:border-[#00aade]/30 transition-all">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="text-xl font-bold text-gray-900">{faq.question}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Join Our School Family?</h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+      <section className="py-10 md:py-20 bg-gradient-to-br from-[#d50004] via-[#b80003] to-[#00aade] text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Join Our School Family?</h2>
+          <p className="text-xl md:text-2xl mb-12 opacity-95 max-w-3xl mx-auto leading-relaxed">
             Contact us today to schedule a visit or learn more about our admission process. We look forward to welcoming your child to Yoga Convent School.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
-              <Phone className="mr-2 h-5 w-5" />
-              Call Us Now
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="h-14 px-8 text-lg bg-white text-[#d50004] hover:bg-gray-100"
+              asChild
+            >
+              <a href="tel:+919415981641">
+                <Phone className="mr-2 h-6 w-6" />
+                Call Us Now
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white">
-              <Mail className="mr-2 h-5 w-5" />
-              Email Us
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="h-14 px-8 text-lg bg-white/10 hover:bg-white/20 text-white border-2 border-white"
+              asChild
+            >
+              <a href="mailto:info@yogaconvent.edu.in">
+                <Mail className="mr-2 h-6 w-6" />
+                Email Us
+              </a>
             </Button>
           </div>
         </div>
