@@ -37,7 +37,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 98765 43210', '+91 98765 43211'],
+      details: ['+91-9415981641', '+91 98765 43211'],
       color: 'bg-blue-500',
     },
     {
@@ -49,7 +49,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['Yoga Convent School', '123 Education Lane, City, State - 110001'],
+      details: ['Bhirbhanpur, Varanasi Uttar Pradesh Near Bheronath Mandir Varanasi Uttar Pradesh India - 221311 .'],
       color: 'bg-purple-500',
     },
     {
@@ -212,10 +212,10 @@ export default function ContactPage() {
                     <h4 className="font-semibold mb-2">School Address</h4>
                     <p className="text-muted-foreground">
                       Yoga Convent School<br />
-                      123 Education Lane<br />
-                      Near City Center<br />
-                      City, State - 110001<br />
-                      India
+                      Bhirbhanpur,<br />
+                      Varanasi Uttar Pradesh,<br />
+                      Near Bheronath Mandir,<br />
+                      Varanasi Uttar Pradesh India - 221311 .
                     </p>
                   </div>
                   <div>

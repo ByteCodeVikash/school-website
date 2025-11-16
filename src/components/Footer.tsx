@@ -35,7 +35,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+91 98765 43210</span>
+                <span>+91-9415981641</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
@@ -43,7 +43,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
-                <span>Birghanpur, Varanasi, Uttar Pradesh</span>
+                <span>Bhirbhanpur, Varanasi Uttar Pradesh Near Bheronath Mandir Varanasi Uttar Pradesh India - 221311 .</span>
               </li>
             </ul>
           </div>
