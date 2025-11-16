@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate } from "react-router-dom";
 
-import { BookOpen, Users, Award, Heart, ArrowRight, Star, Trophy, Lightbulb, Target, Sparkles, CheckCircle, GraduationCap, FlaskConical, Brain, Palette, Globe, Music, Drama, Dumbbell, Shield, TrendingUp, Video, Library, Microscope, Quote, Mail, Phone } from 'lucide-react';
+import { BookOpen, Users, Award, Heart, ArrowRight, Star, Trophy, Lightbulb, Target, Sparkles, CheckCircle, GraduationCap, FlaskConical, Brain, Palette, Globe, Music, Drama, Dumbbell, Shield, TrendingUp, Video, Library, Microscope, Quote } from 'lucide-react';
 
 export default function HomePage() {
   const navigate = useNavigate();
