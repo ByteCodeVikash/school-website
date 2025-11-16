@@ -549,7 +549,7 @@ export default function HomePage() {
                   <div className="space-y-4">
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">Phone</div>
-                      <div className="text-lg font-semibold">+91 XXX-XXX-XXXX</div>
+                      <div className="text-lg font-semibold">+91-9415981641</div>
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">Email</div>

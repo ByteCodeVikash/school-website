@@ -37,7 +37,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91-9415981641', '+91 98765 43211'],
+      details: ['+91-9415981641'],
       color: 'bg-blue-500',
     },
     {

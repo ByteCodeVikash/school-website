@@ -5,7 +5,7 @@ export default function TeachersPage() {
   const teachers = [
     {
       name: 'Mrs. Sunita Sharma',
-      designation: 'Principal & English Teacher',
+      designation: 'English Teacher',
       description: 'Leading with vision and excellence, specializing in English literature and educational leadership.',
       email: 'sunita.sharma@yogaconvent.edu.in',
       subject: 'English & Administration',
