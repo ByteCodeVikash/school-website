@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card';
+// import { Card, CardContent } from '@/components/ui/card';
 import { Mail, GraduationCap, Award, Users } from 'lucide-react';
 
 export default function TeachersPage() {
@@ -180,9 +180,9 @@ export default function TeachersPage() {
                 key={index}
                 className="teacher-card group"
                 style={{
-                  '--hue': teacher.hue,
-                  '--saturation': '100%',
-                  '--lightness': '45%'
+                    ["--hue" as any]: teacher.hue,
+                    ["--saturation" as any]: "100%",
+                    ["--lightness" as any]: "45%"
                 }}
               >
                 <div className="card-content">
@@ -253,7 +253,7 @@ export default function TeachersPage() {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         .teacher-card {
           padding: 1.5em;
           display: flex;
